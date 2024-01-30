@@ -7,7 +7,7 @@ using UnityEngine;
 public class Player : MonoBehaviour, IDamagable
 {
     [SerializeField] TMP_Text scoreText;
-    [SerializeField] FloatVariable health;
+    [SerializeField] public FloatVariable health;
     [SerializeField] PhysicsCharacterController characterController;
 
     [Header("Events")]
@@ -15,13 +15,14 @@ public class Player : MonoBehaviour, IDamagable
     [SerializeField] VoidEvent gameStartEvent = default;
     [SerializeField] VoidEvent playerDeadEvent = default;
 
+
     private int score = 0;
 
     public int Score {
        get { return score; } 
        set { 
             score = value; 
-            scoreText.text = score.ToString(); 
+            scoreText.text = "Score: " + score.ToString(); 
             scoreEvent.RaiseEvent(score);   
         } 
     }
@@ -29,7 +30,7 @@ public class Player : MonoBehaviour, IDamagable
     private void OnEnable()
     {
         gameStartEvent.Subscribe(OnStartGame);
-        //gameStartEvent.Subscribe(OnStartGame); make this OnRespawn
+        //playerDeadEvent.Subscribe(OnRespawn()); 
     }
 
     private void OnStartGame()
@@ -63,14 +64,17 @@ public class Player : MonoBehaviour, IDamagable
         {
             playerDeadEvent.RaiseEvent();
         }
+
     }
 
-    public void Respawn(GameObject respawn)
+    public void OnRespawn(GameObject respawn)
     {
         transform.position = respawn.transform.position;
         transform.rotation = respawn.transform.rotation;
         
         characterController.Reset();
+
+        
         //velocity and the sorts will need to be reset
     }
 }

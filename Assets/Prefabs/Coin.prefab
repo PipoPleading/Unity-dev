@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 41680dad0f0243748b4e228f49a2e3c4, type: 2}
+  - {fileID: 2100000, guid: f016a65fb05cd87429d74b99cfd4e850, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -99,6 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3a80da7a98dd554885bbcbc479f6661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xRotate: 0
+  yRotate: 0
+  zRotate: 0
   angle: 180
 --- !u!114 &4260888685134485234
 MonoBehaviour:
@@ -112,7 +115,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e847949b36c3e94ca4fe55ba27a87ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDash: 0
   pickupPrefab: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
+  pickupSfx: {fileID: 0}
 --- !u!114 &4240506726825662824
 MonoBehaviour:
   m_ObjectHideFlags: 0
