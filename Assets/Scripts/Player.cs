@@ -77,4 +77,9 @@ public class Player : MonoBehaviour, IDamagable
         
         //velocity and the sorts will need to be reset
     }
+
+    public void ApplyDamage(float damage)
+    {
+        throw new NotImplementedException();
+    }
 }
