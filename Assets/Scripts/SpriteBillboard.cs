@@ -8,7 +8,6 @@ public class SpriteBillboard : MonoBehaviour
     [SerializeField] bool freezeXAxis = true;
     private void Update()
     {
-
         if (freezeXAxis)
         {
             transform.rotation = Quaternion.Euler(0f, Camera.main.transform.rotation.eulerAngles.y, 0f);
@@ -17,8 +16,5 @@ public class SpriteBillboard : MonoBehaviour
         {
             transform.rotation = Camera.main.transform.rotation;
         }
-
-
-
     }
 }

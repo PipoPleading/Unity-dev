@@ -1,13 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.U2D;
 using UnityEngine;
 
 public class KinematicController : MonoBehaviour
 {
     [SerializeField, Range(0, 100)] float speed = 1;
     [SerializeField, Range(0, 40)] float maxDistance = 5;
-    float dash = 2;
     void Update()
     {
 
@@ -16,11 +14,6 @@ public class KinematicController : MonoBehaviour
         direction.y = Input.GetAxis("Vertical");
 
         Vector3 force = direction * speed * Time.deltaTime;
-        //dash multiplier
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            force *= dash;
-        }
 
         transform.localPosition += force;
 

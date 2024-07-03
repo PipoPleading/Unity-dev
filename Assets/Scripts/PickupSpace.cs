@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pickup : MonoBehaviour
+public class PickupSpace : MonoBehaviour
 {
     [SerializeField] bool isDash = false;
     [SerializeField] bool isHealth = false;
     [SerializeField] bool isWin = false;
     [SerializeField] GameObject pickupPrefab = null;
-    [SerializeField] GameManagerSpace game;
+/*    [SerializeField] GameManager game;*/
     [SerializeField] AudioSource pickupSfx = null;
     [SerializeField] int points = 10;
 
@@ -31,10 +31,10 @@ public class Pickup : MonoBehaviour
         {
             player.TakeDamage(-5f); //should heal <3
         }
-        if (isWin == true)
+/*        if (isWin == true)
         {
             game.winGame = true; 
-        }
+        }*/
         pickupSfx.Play();
         Instantiate(pickupPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject); 
